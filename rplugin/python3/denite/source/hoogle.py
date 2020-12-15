@@ -96,7 +96,7 @@ class Source(Base):
         elif context["input"]:
             context["__query"] = context["input"]
         else:
-            context["__query"] = util.input(self.vim, context, "Query: ")
+            context["__query"] = self.vim.call('denite#util#input', 'Query: ')
 
     def on_close(self, context):
         if context["__proc"]:
